@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        address: 住所
+        datetime: 生年月日
+        name: 名前
+        name_reading: フリガナ
+        phone_number: 電話番号
+        body_weight: 体重
+        height: 身長
+        body_temperature: 体温
+        blood_type_id: 血液型
+        allergy_id: アレルギーの有無
+        chronic_condition_id: 持病の有無
+        venue_id: 会場
