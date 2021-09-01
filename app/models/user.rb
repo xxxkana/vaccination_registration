@@ -4,7 +4,7 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :allergy, :blood_type, :chronic_condition, :venue
 
-  #has_one :registration
+  has_one :registration
 
   with_options presence: true do
     validates :address, :datetime, :public_uid
