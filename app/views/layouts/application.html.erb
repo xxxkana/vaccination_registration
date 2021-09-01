@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>VaccinationRegistration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaccination_Registration</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
   </head>
 
   <body>
+    <header class="header">
+      <div class="inner">
+        <div class="nav">
+          <div class="nav__left">
+            <%= link_to image_tag("logo.png", class: :logo), root_path %>
+            <p>ワクチン登録サイト</P>
+            <h5>*このアプリケーションは個人制作物です。関係者、関係省庁と一切関係ありません。</h5>
+            <h6>*This application is private.</h6>
+          </div>
+          <% if user_signed_in? %>
+            <div class="nav__right">
+               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </header>
     <%= yield %>
+    <footer class="footer">
+    </footer>
   </body>
 </html>
