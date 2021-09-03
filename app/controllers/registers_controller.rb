@@ -6,14 +6,13 @@ class RegistersController < ApplicationController
   end  
 
   def create
-    @register = Register.new(register_params)
+    @user = User.find_by(register_params)
+    @register = Register.new(register_params.merge(user_id: @user.id))
     @register.save
-    #redirect_to root_path
-    #bypass_sign_in(current_user) 
   end
 
   def register_params
-    params.require(:register).permit(:user_id)
+    params.require(:register).permit(:public_uid)
   end
 
 end
