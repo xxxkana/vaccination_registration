@@ -4,6 +4,7 @@
       <h2 class="page-heading">個人情報編集</h2>
 
         <%= form_with model:current_user, local: true do |f| %>
+        <%= render "devise/shared/error_messages", resource: current_user %>
 
         <div class="field">
           <%= f.label :email, "メールアドレス" %><br />
@@ -43,6 +44,7 @@
         <div class="form-group">
           <div class='form-text-wrap'>
             <label class="form-text">生年月日</label>
+          </div>  
         </div>
         <div class='input-birth-wrap'>
           <%= raw sprintf(
