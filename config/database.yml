@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: vaccination_registration_production
-  username: vaccination_registration
-  password: <%= ENV['VACCINATION_REGISTRATION_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
